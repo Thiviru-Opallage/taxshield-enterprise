@@ -84,12 +84,6 @@ export default function LoginPage() {
             {busy ? "Signing in…" : "Sign In"}
           </button>
         </form>
-
-        <div className="mt-6 pt-5 border-t border-slate-100 text-center">
-          <p className="text-[11px] text-slate-400">
-            Demo pre-filled: <code className="font-mono text-slate-600">demo@taxshield.local</code>
-          </p>
-        </div>
       </div>
     </div>
   );
