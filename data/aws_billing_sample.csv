@@ -1,0 +1,29 @@
+line_item_id,date,account_id,region,service,usage_type,cost_usd
+i-001,2026-08-01,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,gpu:K80.8xlarge,412.87
+i-002,2026-08-01,123456789012,us-east-1,Amazon SageMaker,Training:ml.p3.2xlarge,318.40
+i-003,2026-08-02,123456789012,us-east-1,Amazon Simple Storage Service,TimedStorage-ByteHrs,47.12
+i-004,2026-08-02,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,c6g.xlarge,88.31
+i-005,2026-08-03,123456789012,us-east-1,Amazon SageMaker,Training:ml.g5.xlarge,276.55
+i-006,2026-08-03,123456789012,us-east-1,Amazon CloudFront,DataTransfer-Out-Bytes,18.94
+i-007,2026-08-04,123456789012,us-east-1,Amazon Relational Database Service,InstanceUsage:db.r5.large,143.20
+i-008,2026-08-04,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,gpu:p4d.24xlarge,1284.60
+i-009,2026-08-05,123456789012,us-west-2,Amazon SageMaker,NotebookInstance:ml.t3.medium,62.40
+i-010,2026-08-05,123456789012,us-east-1,Amazon Simple Queue Service,Requests-Tiered,9.87
+i-011,2026-08-06,123456789012,us-east-1,Amazon Bedrock,ModelInvocation-Text,184.33
+i-012,2026-08-06,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,m6i.2xlarge,131.05
+i-013,2026-08-07,123456789012,us-east-1,Amazon Simple Storage Service,TimedStorage-ByteHrs,51.66
+i-014,2026-08-07,123456789012,us-west-2,Amazon SageMaker,Training:ml.g5.12xlarge,892.14
+i-015,2026-08-08,123456789012,us-east-1,Amazon Elastic File System,StorageUsage,22.38
+i-016,2026-08-08,123456789012,us-east-1,Amazon CloudWatch,MetricMonitorUsage,14.72
+i-017,2026-08-09,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,gpu:g5.4xlarge,387.99
+i-018,2026-08-09,123456789012,us-east-1,Amazon DynamoDB,WriteRequestUnits,31.45
+i-019,2026-08-10,123456789012,us-west-2,Amazon SageMaker,EndpointUsage:ml.g4dn.xlarge,248.70
+i-020,2026-08-10,123456789012,us-east-1,Amazon Virtual Private Cloud,NatGateway-Hours,45.60
+i-021,2026-08-11,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,c7g.xlarge,76.22
+i-022,2026-08-11,123456789012,us-east-1,Amazon Simple Notification Service,Requests,6.13
+i-023,2026-08-12,123456789012,us-west-2,Amazon SageMaker,Training:ml.p3.8xlarge,1046.88
+i-024,2026-08-12,123456789012,us-east-1,Amazon Simple Storage Service,Cross-Region-Replication-Bytes,37.29
+i-025,2026-08-13,123456789012,us-east-1,Amazon Elastic Compute Cloud - Compute,gpu:g5.12xlarge,742.10
+i-026,2026-08-13,123456789012,us-east-1,Amazon Cognito,MonthlyActiveUsers,11.80
+i-027,2026-08-14,123456789012,us-east-1,Amazon Relational Database Service,StorageUsage,28.94
+i-028,2026-08-14,123456789012,us-west-2,Amazon Bedrock,ModelInvocation-Image,96.47

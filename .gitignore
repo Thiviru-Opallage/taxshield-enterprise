@@ -219,6 +219,13 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-.env.example
 .env
 taxshield.db
+# Gate 3 additions
+node_modules/
+.next/
+data/kb_pdfs/
+venv/
+taxshield.db
+.env
+ml/risk_model.json

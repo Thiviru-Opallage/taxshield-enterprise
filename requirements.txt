@@ -3,3 +3,16 @@ uvicorn
 requests
 cryptography
 python-dotenv
+pyjwt
+pypdf
+httpx
+pytest
+stripe
+slowapi
+numpy
+pandas
+scikit-learn
+qdrant-client
+xgboost
+reportlab
+python-multipart
