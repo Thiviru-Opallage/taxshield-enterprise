@@ -208,7 +208,7 @@ attack by a key-holder.
 
 ## Team & course context
 
-Team Qubrix — INTELLICON '26 Buildathon, APIIT (Staffordshire University).
+Team Qubrix — INTELLICON '26 Buildathon).
 Roles: AI/ML, Cyber-Security, IoT & Cloud. Built with AI assistance; see
 [docs/AI_USAGE.md](docs/AI_USAGE.md) for exactly what AI did and what the team
 verified by hand. Business case: [docs/BUSINESS_CASE.md](docs/BUSINESS_CASE.md).
