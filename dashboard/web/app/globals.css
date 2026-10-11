@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Colors are set by Tailwind classes in layout.tsx (dark by default).
+   This file only handles the font, so nothing here overrides the theme. */
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, Helvetica, sans-serif;
+}
