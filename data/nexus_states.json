@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "description": "Simplified multi-state economic nexus calculator. Thresholds and state rates researched from each state's official revenue department website. This is NOT tax advice: it ignores product taxability, exemptions, local rates, marketplace-facilitator collection, and physical-presence nexus.",
+    "built": "2026-10-11",
+    "approaching_pct": 0.8
+  },
+  "states": [
+    {
+      "code": "CA",
+      "name": "California",
+      "threshold_dollars": 500000,
+      "threshold_transactions": null,
+      "lookback": "current or preceding calendar year",
+      "state_rate": 0.0725,
+      "rate_note": "7.25% statewide base (includes 1.25% local); district taxes may add",
+      "click_through": "Marketplace sales count toward the seller's $500k threshold; facilitators collect on facilitated sales",
+      "source_urls": ["https://cdtfa.ca.gov/industry/MPFAct.htm", "https://cdtfa.ca.gov/taxes-and-fees/know-your-rate.htm"],
+      "verified": true
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "threshold_dollars": 500000,
+      "threshold_transactions": 100,
+      "lookback": "immediately preceding four sales tax quarters",
+      "state_rate": 0.04,
+      "rate_note": "4% state rate; local taxes add on top; 0.375% MCTD surcharge inside the MCTD",
+      "click_through": "Marketplace sales count toward threshold; provider collects on facilitated sales",
+      "source_urls": ["https://www.tax.ny.gov/pubs_and_bulls/publications/sales/nexus.htm", "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/sales_tax_rates_additional_sales_taxes_and_fees.htm"],
+      "verified": true
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "threshold_dollars": 500000,
+      "threshold_transactions": null,
+      "lookback": "preceding 12 calendar months (total Texas revenue, incl. non-taxable)",
+      "state_rate": 0.0625,
+      "rate_note": "6.25% state rate; local tax adds up to 2%",
+      "click_through": "No separate click-through threshold; marketplace sales count toward safe harbor",
+      "source_urls": ["https://comptroller.texas.gov/taxes/sales/remote-sellers.php", "https://comptroller.texas.gov/taxes/publications/94-105.php"],
+      "verified": true
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "current or prior calendar year",
+      "state_rate": 0.065,
+      "rate_note": "6.5% state retail sales tax; local rates add on top",
+      "click_through": "Click-through and 200-transaction thresholds eliminated 2019-03-14; marketplace sales count toward receipts threshold",
+      "source_urls": ["https://dor.wa.gov/taxes-rates/retail-sales-tax/marketplace-fairness-leveling-playing-field/remote-sellers"],
+      "verified": true
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "prior calendar year taxable sales",
+      "state_rate": 0.06,
+      "rate_note": "6% state rate plus county discretionary surtax (not modelled)",
+      "click_through": "UNVERIFIED from a readable DOR page — verify before relying on this row",
+      "source_urls": ["https://floridarevenue.com/taxes/taxesfees/Pages/sales_tax.aspx"],
+      "verified": false,
+      "unverified_note": "Florida DOR pages did not expose readable text during research; number is from DOR search results and must be confirmed at floridarevenue.com"
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "preceding 12-month period (200-transaction threshold removed 2026-01-01)",
+      "state_rate": 0.0625,
+      "rate_note": "6.25% general merchandise; 1% for qualifying drugs/medical; local rates may apply",
+      "click_through": "Marketplace facilitators have a related $100k threshold; no click-through modification stated",
+      "source_urls": ["https://tax.illinois.gov/research/publications/bulletins/fy-2026-12.html", "https://tax.illinois.gov/research/taxinformation/sales/destination-based-sales-tax-assistance.html"],
+      "verified": true
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "current or preceding calendar year",
+      "state_rate": 0.0625,
+      "rate_note": "6.25% state sales tax",
+      "click_through": "UNVERIFIED — Mass.gov pages returned errors during research; confirm at mass.gov",
+      "source_urls": ["https://www.mass.gov/info-details/remote-seller-and-marketplace-facilitator-faqs"],
+      "verified": false,
+      "unverified_note": "Mass.gov pages could not be fetched during research; $100k is the commonly cited threshold but must be confirmed"
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "current or prior calendar year",
+      "state_rate": 0.029,
+      "rate_note": "2.9% state rate ONLY — home-rule local jurisdictions set their own; combined rates are much higher and not modelled",
+      "click_through": "UNVERIFIED — tax.colorado.gov returned errors during research",
+      "source_urls": ["https://tax.colorado.gov/out-of-state-businesses"],
+      "verified": false,
+      "unverified_note": "Colorado pages could not be fetched; state rate 2.9% is statutory but the nexus threshold must be confirmed. Home-rule complexity means Colorado exposure estimates here are unreliable."
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "current or preceding calendar year",
+      "state_rate": 0.04,
+      "rate_note": "4% state rate; local option taxes add up to 4%",
+      "click_through": "DOR directs marketplace questions to marketplace-facilitator guidance; no click-through modification verified",
+      "source_urls": ["https://dor.georgia.gov/taxes/sales-use-tax/out-state-sellers", "https://dor.georgia.gov/sales-tax-rates-general"],
+      "verified": false,
+      "unverified_note": "Rate verified from dor.georgia.gov; $100k threshold comes from DOR bulletin SUT-2019-02 which could not be text-extracted — confirm before relying on this row"
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "threshold_dollars": 100000,
+      "threshold_transactions": null,
+      "lookback": "previous or current calendar year",
+      "state_rate": 0.0475,
+      "rate_note": "4.75% general state rate; local and transit taxes may increase the total",
+      "click_through": "Marketplace-facilitated sales count toward threshold; engaged facilitator collects and remits",
+      "source_urls": ["https://www.ncdor.gov/taxes-forms/sales-and-use-tax/other-sales-and-use-tax-resources/remote-sales", "https://www.ncdor.gov/taxes-forms/sales-and-use-tax/sales-and-use-tax-rates/current-sales-and-use-tax-rates"],
+      "verified": true
+    }
+  ]
+}
