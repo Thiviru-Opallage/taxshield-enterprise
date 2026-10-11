@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import AppShell from "@/components/AppShell";
 
 export const metadata: Metadata = {
-  title: "TaxShield Enterprise",
-  description: "R&D tax credit and nexus telemetry — student demo project",
+  title: "TaxShield Enterprise | Telemetry & R&D Tax Credit Portfolio",
+  description: "Enterprise operational telemetry turned into defensible IRS Section 41 credits and multi-state nexus watch.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
-        <Nav />
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
-        <footer className="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
-          TaxShield Enterprise — student demonstration project. Estimates are
-          simplified and are NOT tax advice. Insurance binders are SIMULATED.
-        </footer>
+      <body className="min-h-screen bg-[#F4F6F9] text-slate-800 antialiased selection:bg-sky-100 selection:text-sky-900">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
