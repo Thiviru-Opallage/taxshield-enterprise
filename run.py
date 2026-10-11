@@ -7,6 +7,7 @@ Usage:
 """
 import argparse
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -19,6 +20,14 @@ PY = sys.executable
 def api_healthy() -> bool:
     try:
         with urllib.request.urlopen("http://127.0.0.1:8000/health", timeout=2) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
+def dashboard_up() -> bool:
+    try:
+        with urllib.request.urlopen("http://127.0.0.1:3000", timeout=2) as r:
             return r.status == 200
     except Exception:
         return False
@@ -41,6 +50,8 @@ def main() -> None:
         subprocess.run([PY, os.path.join(ROOT, "scripts", "seed.py"), "--reset"],
                        cwd=ROOT, check=True)
 
+    api = None  # only set when *we* start it (and only then can we wait on it)
+
     if api_healthy():
         print("API already running on :8000 — not starting another")
     else:
@@ -60,10 +71,27 @@ def main() -> None:
     if args.dashboard:
         web = os.path.join(ROOT, "dashboard", "web")
         if os.path.exists(os.path.join(web, "node_modules")):
-            print("==> starting dashboard on http://localhost:3000")
-            subprocess.run(["npm", "run", "dev"], cwd=web)
+            npm = shutil.which("npm")
+            if npm is None:
+                print("npm not found on PATH — install Node.js, then run:\n"
+                      "  cd dashboard/web && npm run dev")
+            elif dashboard_up():
+                print("Dashboard already running on :3000 — not starting another. "
+                      "Open http://localhost:3000")
+            else:
+                print("==> starting dashboard on http://localhost:3000")
+                # On Windows npm is npm.cmd; CreateProcess can't run .cmd
+                # directly, so go through cmd.exe when needed.
+                cmd = [npm, "run", "dev", "--", "-p", "3000"]
+                if npm.lower().endswith((".cmd", ".bat")):
+                    cmd = [os.environ.get("COMSPEC", "cmd.exe"), "/c"] + cmd
+                subprocess.run(cmd, cwd=web)
         else:
             print("dashboard deps missing — run: cd dashboard/web && npm install")
+
+    if api is None:
+        # API was already running (started elsewhere); nothing left to wait on.
+        return
 
     try:
         api.wait()

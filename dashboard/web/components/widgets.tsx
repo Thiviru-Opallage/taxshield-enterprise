@@ -2,20 +2,30 @@
 // Shared data hook: fetches on an interval, tracks loading + error state,
 // and surfaces auth failures so no screen shows a blank page.
 import { useCallback, useEffect, useRef, useState } from "react";
-import { api } from "@/lib/api";
+import { ApiError } from "@/lib/api";
 
 export function usePoll<T>(fn: () => Promise<T>, ms = 5000) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const stopped = useRef(false);
   const fnRef = useRef(fn);
   fnRef.current = fn;
 
   const refresh = useCallback(async () => {
+    if (stopped.current) return; // auth lost — don't keep hammering the API
     try {
       setData(await fnRef.current());
       setError(null);
     } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        stopped.current = true;
+        setError("Not logged in — redirecting to login…");
+        if (window.location.pathname !== "/login") {
+          window.location.assign("/login");
+        }
+        return;
+      }
       setError(err instanceof Error ? err.message : "Request failed");
     } finally {
       setLoading(false);
@@ -23,6 +33,7 @@ export function usePoll<T>(fn: () => Promise<T>, ms = 5000) {
   }, []);
 
   useEffect(() => {
+    stopped.current = false;
     refresh();
     const id = setInterval(refresh, ms);
     return () => clearInterval(id);
