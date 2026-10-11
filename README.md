@@ -16,7 +16,8 @@ risk on the same screen.
 > **simulated**. The audit-risk model is **trained on synthetic data**. Nothing
 > here should be filed with any tax authority without a licensed CPA's review.
 
-![Overview screen](docs/screenshots/overview.png)
+<img width="1907" height="855" alt="image" src="https://github.com/user-attachments/assets/f6e4255b-88e5-47ec-89af-5ec7dc1d3a8b" />
+
 
 ## What is real, partial, and mocked
 
